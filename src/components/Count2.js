@@ -21,8 +21,8 @@ function Count2({ count, posts }) {
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
-    posts: state.posts,
+    count: state.countReducer.count,
+    posts: state.postsReducer.posts,
   };
 };
 

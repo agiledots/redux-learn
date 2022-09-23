@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 // Componentsは useSelector Hooks で redux の state を取得
 
 function Count3() {
-  const count = useSelector((state) => state.count);
-  const posts = useSelector((state) => state.posts);
+  const count = useSelector((state) => state.countReducer.count);
+  const posts = useSelector((state) => state.postsReducer.posts);
 
   return (
     <div>

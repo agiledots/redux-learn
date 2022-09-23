@@ -9,7 +9,13 @@ function Count1({ count }) {
     <div>
       <div className="App">
         <h1>Redux Learn</h1>
-        <p>Count1: {store.getState().count}</p>
+        <p>Count1: {store.getState().countReducer.count}</p>
+
+        <ul>
+          {store.getState().postsReducer.posts.map((post) => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
