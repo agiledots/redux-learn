@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+import { getPosts } from "../store/reducers/postsReducer";
 // Componentsは useSelector Hooks で redux の state を取得
 
 function Count3() {
@@ -17,15 +18,7 @@ function Count3() {
   const posts = useSelector((state) => state.postsReducer.posts);
 
   useEffect(() => {
-    const getPosts = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const data = await res.json();
-      dispatch({
-        type: "GET_POST_DATA",
-        payload: data,
-      });
-    };
-    getPosts();
+    dispatch(getPosts());
   }, [dispatch]);
 
   return (

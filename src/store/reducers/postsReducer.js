@@ -11,3 +11,14 @@ export const postsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export const getPosts = () => {
+  return async (dispatch) => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json();
+    dispatch({
+      type: "GET_POST_DATA",
+      payload: data,
+    });
+  };
+};
