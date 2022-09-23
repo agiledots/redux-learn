@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 
 // Componentsは mapStateToProps で redux の state を取得
 
-function Count2({ dispatch, count, posts }) {
-  const increase = () => {
-    dispatch({ type: "INCREASE_COUNT" });
-  };
-  const decrease = () => {
-    dispatch({ type: "DECREASE_COUNT" });
-  };
+function Count2({ dispatch, increase, decrease, count, posts }) {
+  // const increase = () => {
+  //   dispatch({ type: "INCREASE_COUNT" });
+  // };
+  // const decrease = () => {
+  //   dispatch({ type: "DECREASE_COUNT" });
+  // };
 
   return (
     <div>
@@ -36,4 +36,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Count2);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increase: () => dispatch({ type: "INCREASE_COUNT" }),
+    decrease: () => dispatch({ type: "DECREASE_COUNT" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Count2);
