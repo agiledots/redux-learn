@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
 
-import store from "./store/index";
+import Count1 from "./components/Count1";
+import Count2 from "./components/Count2";
+import Count3 from "./components/Count3";
 
 function App() {
   return (
     <div>
       <div className="App">
-        <h1>Redux Learn</h1>
-        <p>Count:{store.getState().count}</p>
+        <Count1></Count1>
+        <Count2></Count2>
+        <Count3></Count3>
       </div>
     </div>
   );
